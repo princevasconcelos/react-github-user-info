@@ -1,0 +1,38 @@
+.avatar { 
+  width: 150px;
+  height: 150px;
+}
+
+strong {
+  font-size: x-large;
+}
+
+/*
+APAGAR figure e figcaption
+*/
+figure {
+  float: left;
+  background-color: darksalmon;
+}
+
+figcaption {
+  float: right;
+  font-size: 15px;
+  text-align: start;
+  margin-top: 45px;
+  display: flex;
+  background-color: darkmagenta;
+}
+
+@media (min-width: 992px) { 
+  .avatar { 
+    width: 300px;
+    height: 300px;
+  }
+
+  figcaption {
+    float: none;
+    text-align: center;
+    margin-top: 0px;
+  }
+ }
