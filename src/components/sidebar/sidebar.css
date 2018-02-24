@@ -7,12 +7,8 @@ strong {
   font-size: x-large;
 }
 
-/*
-APAGAR figure e figcaption
-*/
 figure {
   float: left;
-  background-color: darksalmon;
 }
 
 figcaption {
@@ -21,7 +17,6 @@ figcaption {
   text-align: start;
   margin-top: 45px;
   display: flex;
-  background-color: darkmagenta;
 }
 
 @media (min-width: 992px) { 
