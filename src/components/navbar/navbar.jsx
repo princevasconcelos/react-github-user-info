@@ -1,18 +1,44 @@
 import React from 'react';
 import Ionicon from 'react-ionicons';
+import PropTypes from 'prop-types';
 
-class Navbar extends React.Component {
-  render() {
-    return (
-      <nav className="navbar navbar-custom"> 
-        <a className="navbar-brand" href="#">
-          <Ionicon icon="logo-github" fontSize="30px" className='align-top mx-2' color="white"/>
-        <strong>Github</strong> profiles
-        </a>
-      </nav>
-    );
-  }
+const defaultProps = {
+  color: '#837278',
+  brandIconColor: 'white',
+  textColor: 'white',
 }
 
+const propTypes = {
+  color: PropTypes.string,
+  brandIcon: PropTypes.string,
+  brandIconColor: PropTypes.string,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  textColor: PropTypes.string,
+}
+
+const Navbar = ({color, brandIcon, brandIconColor, title, subtitle, textColor}) => {
+
+  const textColorStyle = {
+    color: textColor
+  }
+  
+  const navbarStyle = {
+    backgroundColor: color,
+  }
+  
+  const component = (
+    <nav className='navbar' style={navbarStyle}>
+      <a className='navbar-brand' href="#">
+        {brandIcon && <Ionicon icon={brandIcon} fontSize="30px" className='align-top mx-2' color={brandIconColor}/>}
+        <span style={textColorStyle}>{{title} && <strong>{title}</strong> } {subtitle}</span>
+      </a>
+    </nav>
+  );
+  return component;
+}
+
+Navbar.propTypes = propTypes;
+Navbar.defaultProps = defaultProps;
+
 export default Navbar;
-//24292e

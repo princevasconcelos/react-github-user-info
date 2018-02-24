@@ -5,12 +5,3 @@ body {
   padding: 0;
   font-family: 'Open Sans', sans-serif;
 }
-
-.navbar-custom {
-  background-color: #24292e;
-}
-/* change the brand and text color */
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-  color: rgba(255,255,255,1);
-}

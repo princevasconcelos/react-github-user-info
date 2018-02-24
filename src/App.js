@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
 import Navbar from './components/navbar/navbar'
+
 class App extends Component {
   render() {
     return (
       <div>
-        <Navbar></Navbar>
+        <Navbar 
+          color='#24292e'
+          brandIcon='logo-github'
+          title='Github'
+          subtitle='profiles' />
       </div>
     );
   }
