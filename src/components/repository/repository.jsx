@@ -5,15 +5,19 @@ import './repository.css'
 
 const defaultProps = {
   name: 'New Repository',
+  langIcon: 'logo-javascript',
+  countIcon: 'ios-remove'
 }
 
 const propTypes = {
   name: PropTypes.string,
   desc: PropTypes.string,
   language: PropTypes.string,
+  langIcon: PropTypes.string,
   count: PropTypes.string,
+  countIcon: PropTypes.string,
 }
-const Repo = ({name, desc, language, count}) => {
+const Repo = ({name, desc, language, langIcon, count, countIcon}) => {
 
   const component = (
     <div>
@@ -22,13 +26,13 @@ const Repo = ({name, desc, language, count}) => {
       <div className='wrapper text-muted'>
         {language 
           && <div>
-            <Ionicon icon='md-code' fontSize="18px" className='icon mx-2' color='gray' />
+            <Ionicon icon={langIcon} fontSize="18px" className='icon mx-2' color='gray' />
             <span>{language}</span>
           </div>
         }
         {count 
           && <div>
-            <Ionicon icon='md-git-branch' fontSize="18px" className='icon mx-2' color='gray' />
+            <Ionicon icon={countIcon} fontSize="18px" className='icon mx-2' color='gray' />
             <span>{count}</span>
           </div>
         }
