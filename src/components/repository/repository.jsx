@@ -22,14 +22,14 @@ console.log(repos)
         {repo.description && <span className='font-small text-muted d-block mt-2'>{repo.description}</span>}
         {repo.language && 
           <div className='d-inline'>
-            <Ionicon icon={defaultProps.codeIcon} fontSize="18px" className='icon mx-2' color='gray' />
-            <span>{repo.language}</span>
+            <Ionicon icon={defaultProps.codeIcon} fontSize="18px" className='vertical-align mx-2' color='gray' />
+            <span className='vertical-align'>{repo.language}</span>
           </div>
         }
         {repo.stargazers_count &&
           <div className='d-inline'>
-            <Ionicon icon={defaultProps.branchIcon} fontSize="18px" className='icon mx-2' color='gray' />
-            <span>{repo.stargazers_count}</span>
+            <Ionicon icon={defaultProps.branchIcon} fontSize="18px" className='vertical-align mx-2' color='gray' />
+            <span className='vertical-align'>{repo.stargazers_count}</span>
           </div>  
         }
       </li>
