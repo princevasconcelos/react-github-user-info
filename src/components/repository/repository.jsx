@@ -5,41 +5,36 @@ import './repository.css'
 
 const defaultProps = {
   name: 'New Repository',
-  langIcon: 'logo-javascript',
-  countIcon: 'ios-remove'
+  codeIcon: 'md-code', //verificar quando for star ou repo
+  branchIcon: 'md-git-branch'
 }
 
 const propTypes = {
-  name: PropTypes.string,
-  desc: PropTypes.string,
-  language: PropTypes.string,
-  langIcon: PropTypes.string,
-  count: PropTypes.string,
-  countIcon: PropTypes.string,
+  repos: PropTypes.array.isRequired,
 }
-const Repo = ({name, desc, language, langIcon, count, countIcon}) => {
-
-  const component = (
-    <div>
-      <strong><a href="#">{name}</a></strong><br/>
-      {desc && <span className='description text-muted'>{desc}</span>}
-      <div className='wrapper text-muted'>
-        {language 
-          && <div>
-            <Ionicon icon={langIcon} fontSize="18px" className='icon mx-2' color='gray' />
-            <span>{language}</span>
+const Repo = ({repos}) => {
+console.log(repos)
+  const component = repos.map((repo, index) => {
+    repo.stargazers_count = `${repo.stargazers_count}`
+    return (
+      <li className='list-group-item' key={index}>
+        {repo.name && <strong><a className='d-block'href={repo.html_url}>{repo.name}</a></strong>}
+        {repo.description && <span className='font-small text-muted d-block mt-2'>{repo.description}</span>}
+        {repo.language && 
+          <div className='d-inline'>
+            <Ionicon icon={defaultProps.codeIcon} fontSize="18px" className='icon mx-2' color='gray' />
+            <span>{repo.language}</span>
           </div>
         }
-        {count 
-          && <div>
-            <Ionicon icon={countIcon} fontSize="18px" className='icon mx-2' color='gray' />
-            <span>{count}</span>
-          </div>
+        {repo.stargazers_count &&
+          <div className='d-inline'>
+            <Ionicon icon={defaultProps.branchIcon} fontSize="18px" className='icon mx-2' color='gray' />
+            <span>{repo.stargazers_count}</span>
+          </div>  
         }
-      </div>
-      <hr/>
-    </div>
-  );
+      </li>
+    )
+  })
   return component;
 }
 

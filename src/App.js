@@ -1,17 +1,50 @@
 import React, { Component } from 'react';
 import Navbar from './components/navbar/navbar';
 import Sidebar from './components/sidebar/sidebar';
-//import Main from './components/main/main';
 import Repository from './components/repository/repository';
+import axios from 'axios'
 
-
+const BASE_URL = 'https://api.github.com/users'
+const user = 'princevasconcelos'
+ 
 class App extends Component {
 
-  componentDidMount() {
+  state = {
+    userInfo: [],
+    userRepos: [],
+    userStarred: []
+  }
 
+  componentWillMount() {
+    axios.all([
+      this.getUserAccount(user),
+      this.getUserRepos(user),
+      this.getUserStarred(user),
+    ])
+    .then(axios.spread((userResponse, reposResponse, starredResponse) => {
+      this.setState({
+        userInfo: userResponse.data,
+        userRepos: reposResponse.data,
+        userStarred: starredResponse,
+      })
+    }));
+  }
+
+  getUserAccount(name) {
+    return axios.get(`${BASE_URL}/${name}`);
+  }
+
+  getUserRepos(name) {
+    return axios.get(`${BASE_URL}/${name}/repos`);
+  }
+
+  getUserStarred(name) {
+    return axios.get(`${BASE_URL}/${name}/starred`);
   }
 
   render() {
+    const {name, bio, avatar_url} = this.state.userInfo
+    const repos = this.state.userRepos
     return (
       <div>
         <Navbar 
@@ -20,16 +53,12 @@ class App extends Component {
           title='Github'
           subtitle='profiles' />
         {/* <Sidebar 
-          name='Roger Ramos'
-          bio='Front End Dev and UI Designer'
-          avatar='https://avatars0.githubusercontent.com/u/3275772?v=4' /> */}
+          name={name}
+          bio={bio}
+          avatar={avatar_url} /> */}
         <Repository 
-          name='todo-backend'
-          language='Javascript'
-          langIcon='md-code'
-          count='999'
-          countIcon='md-git-branch'
-          desc='descrição descrição descrição descrição descrição descrição ' />
+          repos = {repos} 
+          />
       </div>
     );
   }
