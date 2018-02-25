@@ -1,0 +1,9 @@
+.mainContent{
+  display: grid;
+  background-color: blueviolet;
+  height: 100vh;
+}
+
+@media (min-width: 992px) { 
+
+}
