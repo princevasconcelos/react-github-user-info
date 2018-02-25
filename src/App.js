@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header/header'
-import Sidebar from './components/sidebar/sidebar';
+import Profile from './components/profile/profile'
 import Repository from './components/repository/repository';
 import Main from './components/main/main';
 import axios from 'axios'
@@ -53,10 +53,10 @@ class App extends Component {
           brandIcon='logo-github'
           title='Github'
           subtitle='profiles' />
-        {/* <Sidebar 
+        <Profile 
           name={name}
           bio={bio}
-          avatar={avatar_url} /> */}
+          avatar={avatar_url} />
         <Main repos = {repos} />
       </div>
     );

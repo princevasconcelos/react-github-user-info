@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './sidebar.css'
+import './profile.css'
 
 const propTypes = {
   name: PropTypes.string,
@@ -8,7 +8,7 @@ const propTypes = {
   avatar: PropTypes.string,
 }
 
-const Sidebar = ({name, bio, avatar}) => {
+const Profile = ({name, bio, avatar}) => {
 
   const component = (
     <figure className='figure'> 
@@ -20,6 +20,6 @@ const Sidebar = ({name, bio, avatar}) => {
   return component;
 }
 
-Sidebar.propTypes = propTypes;
+Profile.propTypes = propTypes;
 
-export default Sidebar;
+export default Profile;
