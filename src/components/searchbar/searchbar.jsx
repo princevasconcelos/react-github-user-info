@@ -4,7 +4,7 @@ import './searchbar.css'
 
 const Searchbar = ({}) => {
   const component = (
-    <div className='wrapper-box w-25 mx-5 my-5'>
+    <div className='wrapper-box w-25 my-4'>
       <Ionicon icon='ios-search-outline' fontSize="22px" className='vertical-align mx-2' color='gray' />
       <input type="text" className='custom-font' name="search" placeholder="Filter by name" /> 
     </div>

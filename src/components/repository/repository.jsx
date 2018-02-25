@@ -18,24 +18,30 @@ const Repo = ({repos}) => {
     repo.stargazers_count = `${repo.stargazers_count}`
     return (
       <li className='list-group-item' key={index}>
-        {repo.name && <strong><a className='d-block'href={repo.html_url}>{repo.name}</a></strong>}
-        {repo.description && <span className='font-small text-muted d-block mt-2'>{repo.description}</span>}
-        {repo.language && 
-          <div className='d-inline'>
-            <Ionicon icon={defaultProps.codeIcon} fontSize="18px" className='vertical-align mx-2' color='gray' />
-            <span className='vertical-align'>{repo.language}</span>
-          </div>
-        }
-        {repo.stargazers_count &&
-          <div className='d-inline'>
-            <Ionicon icon={defaultProps.branchIcon} fontSize="18px" className='vertical-align mx-2' color='gray' />
-            <span className='vertical-align'>{repo.stargazers_count}</span>
-          </div>  
-        }
+        {repo.name && <strong><a className='d-table-row'href={repo.html_url}>{repo.name}</a></strong>}
+        {repo.description && <span className='font-small text-muted d-flex mt-2'>{repo.description}</span>}
+        <div className='d-flex'>
+          {repo.language && 
+            <div className='d-inline mr-4'>
+              <Ionicon icon={defaultProps.codeIcon} fontSize="18px" className='vertical-align mx-2' color='gray' />
+              <span className='vertical-align'>{repo.language}</span>
+            </div>
+          }
+          {repo.stargazers_count &&
+            <div className='d-inline'>
+              <Ionicon icon={defaultProps.branchIcon} fontSize="18px" className='vertical-align mx-2' color='gray' />
+              <span className='vertical-align'>{repo.stargazers_count}</span>
+            </div>  
+          }
+        </div>
       </li>
     )
   })
-  return component;
+  return (
+    <ul className='list-group list-group-flush'>
+      {component}
+    </ul>
+    );
 }
 
 Repo.propTypes = propTypes;

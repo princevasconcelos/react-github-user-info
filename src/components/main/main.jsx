@@ -6,10 +6,10 @@ import './main.css'
 const Main = ({repos}) => {
   
   const component = (
-    <div>
+    <div className='ml-5'>
       <Searchbar />
-      {/* <Repository 
-        repos = {repos} /> */}
+      <Repository 
+        repos = {repos} />
     </div>
   );
   return component;

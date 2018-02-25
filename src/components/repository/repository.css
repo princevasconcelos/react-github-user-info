@@ -2,6 +2,14 @@
   font-size: small
 }
 
+span {
+  color: gray;
+}
+
 .vertical-align {
   vertical-align: middle;
+}
+
+.list-group li:nth-child(1){
+  border-top: 0 none;
 }
