@@ -1,0 +1,26 @@
+input {
+  border: none;
+  outline: none;
+  padding: 8px;
+  width: 80%;
+}
+
+.custom-font {
+  font-size: 14px;
+}
+
+::placeholder {
+  color: gray;
+  opacity: 0.8; 
+}
+
+.wrapper-box {
+  border: 1px solid #dadada;
+  border-radius: 7px;
+}
+
+/* .glowing-border:focus { 
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+} */
