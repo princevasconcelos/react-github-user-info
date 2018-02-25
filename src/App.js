@@ -5,7 +5,7 @@ import Repository from './components/repository/repository';
 import axios from 'axios'
 
 const BASE_URL = 'https://api.github.com/users'
-const user = 'princevasconcelos'
+const user = 'rodgerpaulo'
  
 class App extends Component {
 
@@ -52,13 +52,13 @@ class App extends Component {
           brandIcon='logo-github'
           title='Github'
           subtitle='profiles' />
-        {/* <Sidebar 
+        <Sidebar 
           name={name}
           bio={bio}
-          avatar={avatar_url} /> */}
-        <Repository 
-          repos = {repos} 
+          avatar={avatar_url} 
           />
+        {/* <Repository 
+          repos = {repos} /> */}
       </div>
     );
   }
