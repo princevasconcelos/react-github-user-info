@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from './components/navbar/navbar';
+import Header from './components/header/header'
 import Sidebar from './components/sidebar/sidebar';
 import Repository from './components/repository/repository';
 import Main from './components/main/main';
@@ -48,17 +48,16 @@ class App extends Component {
     const repos = this.state.userRepos
     return (
       <div>
-        <Navbar 
+        <Header 
           color='#24292e'
           brandIcon='logo-github'
           title='Github'
           subtitle='profiles' />
-        <Main 
-          repos = {repos} />
         {/* <Sidebar 
           name={name}
           bio={bio}
           avatar={avatar_url} /> */}
+        <Main repos = {repos} />
       </div>
     );
   }

@@ -7,9 +7,9 @@ const Main = ({repos}) => {
   
   const component = (
     <div className='ml-5'>
-      <Searchbar />
+      {/* <Searchbar />
       <Repository 
-        repos = {repos} />
+        repos = {repos} /> */}
     </div>
   );
   return component;

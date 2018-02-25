@@ -17,18 +17,18 @@ const propTypes = {
   textColor: PropTypes.string,
 }
 
-const Navbar = ({color, brandIcon, brandIconColor, title, subtitle, textColor}) => {
+const Header = ({color, brandIcon, brandIconColor, title, subtitle, textColor}) => {
 
   const textColorStyle = {
     color: textColor
   }
   
-  const navbarStyle = {
+  const headerStyle = {
     backgroundColor: color,
   }
   
   const component = (
-    <nav className='navbar' style={navbarStyle}>
+    <nav className='navbar' style={headerStyle}>
       <a className='navbar-brand' href="">
         {brandIcon && <Ionicon icon={brandIcon} fontSize="30px" className='align-top mx-2' color={brandIconColor}/>}
         <span style={textColorStyle}>{{title} && <strong>{title}</strong> } {subtitle}</span>
@@ -38,7 +38,7 @@ const Navbar = ({color, brandIcon, brandIconColor, title, subtitle, textColor}) 
   return component;
 }
 
-Navbar.propTypes = propTypes;
-Navbar.defaultProps = defaultProps;
+Header.propTypes = propTypes;
+Header.defaultProps = defaultProps;
 
-export default Navbar;
+export default Header;
