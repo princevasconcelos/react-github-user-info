@@ -29,7 +29,7 @@ const Navbar = ({color, brandIcon, brandIconColor, title, subtitle, textColor}) 
   
   const component = (
     <nav className='navbar' style={navbarStyle}>
-      <a className='navbar-brand' href="#">
+      <a className='navbar-brand' href="">
         {brandIcon && <Ionicon icon={brandIcon} fontSize="30px" className='align-top mx-2' color={brandIconColor}/>}
         <span style={textColorStyle}>{{title} && <strong>{title}</strong> } {subtitle}</span>
       </a>

@@ -18,7 +18,7 @@ const Sidebar = ({name, bio, avatar}) => {
 
   const component = (
     <figure className='figure'> 
-      <img className='avatar rounded-circle p-4' src={avatar} alt="Profile picture"/>
+      <img className='avatar rounded-circle p-4' src={avatar} alt="profile"/>
       <figcaption align='right'><strong>{name}</strong><br/>{bio}</figcaption>
     </figure>
 
