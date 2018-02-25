@@ -1,0 +1,16 @@
+.description {
+  font-size: small
+}
+
+.wrapper div {
+  display: inline-block;
+  font-size: small;
+}
+
+.wrapper span {
+  vertical-align: middle;
+}
+
+.icon {
+  vertical-align: middle;
+}
