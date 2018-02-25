@@ -2,8 +2,9 @@
   font-size: small
 }
 
-span {
+.small-gray {
   color: gray;
+  font-size: small;
 }
 
 .vertical-align {
@@ -12,4 +13,9 @@ span {
 
 .list-group li:nth-child(1){
   border-top: 0 none;
+}
+
+.d-inline {
+  margin: 0px;
+  padding: 0px;
 }
