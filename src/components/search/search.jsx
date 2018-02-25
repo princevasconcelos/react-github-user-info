@@ -1,8 +1,8 @@
 import React from 'react';
 import Ionicon from 'react-ionicons';
-import './searchbar.css'
+import './search.css'
 
-const Searchbar = ({}) => {
+const Search = ({}) => {
   const component = (
     <div className='wrapper-box w-25 my-4'>
       <Ionicon icon='ios-search-outline' fontSize="22px" className='vertical-align mx-2' color='gray' />
@@ -12,4 +12,4 @@ const Searchbar = ({}) => {
   return component;
 }
 
-export default Searchbar;
+export default Search;

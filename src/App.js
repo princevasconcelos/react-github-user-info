@@ -48,7 +48,7 @@ class App extends Component {
     const repos = this.state.userRepos
     return (
       <div>
-        <Header 
+        {/* <Header 
           color='#24292e'
           brandIcon='logo-github'
           title='Github'
@@ -56,7 +56,7 @@ class App extends Component {
         <Profile 
           name={name}
           bio={bio}
-          avatar={avatar_url} />
+          avatar={avatar_url} /> */}
         <Main repos = {repos} />
       </div>
     );
