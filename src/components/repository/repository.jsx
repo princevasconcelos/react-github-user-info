@@ -13,7 +13,7 @@ const propTypes = {
   repos: PropTypes.array.isRequired,
 }
 const Repo = ({repos}) => {
-console.log(repos)
+  
   const component = repos.map((repo, index) => {
     repo.stargazers_count = `${repo.stargazers_count}`
     return (

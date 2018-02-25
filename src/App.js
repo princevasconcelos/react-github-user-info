@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './components/navbar/navbar';
 import Sidebar from './components/sidebar/sidebar';
 import Repository from './components/repository/repository';
+import Main from './components/main/main';
 import axios from 'axios'
 
 const BASE_URL = 'https://api.github.com/users'
@@ -52,13 +53,12 @@ class App extends Component {
           brandIcon='logo-github'
           title='Github'
           subtitle='profiles' />
-        <Sidebar 
+        <Main 
+          repos = {repos} />
+        {/* <Sidebar 
           name={name}
           bio={bio}
-          avatar={avatar_url} 
-          />
-        {/* <Repository 
-          repos = {repos} /> */}
+          avatar={avatar_url} /> */}
       </div>
     );
   }

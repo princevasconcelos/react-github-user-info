@@ -1,14 +1,12 @@
 import React from 'react';
-import Ionicon from 'react-ionicons';
-import PropTypes from 'prop-types';
+import Repository from '../repository/repository';
 import './main.css'
 
-const Main = ({}) => {
+const Main = ({repos}) => {
   
   const component = (
-    <div className='mainContent'>
-      <h1>oi</h1>
-    </div>
+    <Repository 
+      repos = {repos} />
   );
   return component;
 }
