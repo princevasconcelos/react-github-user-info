@@ -17,6 +17,7 @@ input {
 .wrapper-box {
   border: 1px solid #dadada;
   border-radius: 3px;
+  min-width: 260px;
 }
 
 /* .glowing-border:focus { 
