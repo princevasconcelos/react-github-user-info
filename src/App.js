@@ -6,21 +6,14 @@ import Tabs from './components/tabs/tabs';
 
 class App extends Component {
 
-  userFetched = (data) => {
-    console.log(`oi ${data}`)
-  }
-
   constructor(props) {
     super(props)
     this.state = {
       username: 'rodgerpaulo'
     }
-
-
-    
   }
 
-  componentDidMount() {
+  getData(username) {
     Helper.getGithubInfor(this.state.username)
     .then(function(data) {
       this.setState({
@@ -29,6 +22,20 @@ class App extends Component {
         userStarred: data.userStarred,
       })
     }.bind(this))
+  }
+
+  userFetched = (data) => {
+    this.setState({
+      username: data
+    })
+  }
+
+  componentDidMount() {
+    this.getData(this.state.username)
+  }
+
+  componentWillUpdate() {
+    this.getData(this.state.username)
   }
 
   render() {
