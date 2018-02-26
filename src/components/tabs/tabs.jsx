@@ -4,7 +4,8 @@ import Repos from '../repository/repository'
 import './tabs.css'
 
 const Tabs = ({repos, starred}) => {
-  
+  console.log(repos)
+  console.log(starred)
   const component = (
     <div className='ml-5'>
       <nav>
@@ -17,8 +18,8 @@ const Tabs = ({repos, starred}) => {
       <Search />
 
       <div className="tab-content" id="nav-tabContent">
-        <div className="tab-pane fade show active" id="repositories" role="tabpanel" aria-labelledby="nav-repo-tab"> <Repos data={repos} /> </div>
-        <div className="tab-pane fade" id="starred" role="tabpanel" aria-labelledby="nav-starred-tab"> <Repos data={starred} /> </div>
+        <div className="tab-pane fade show active" id="repositories" role="tabpanel" aria-labelledby="nav-repo-tab"> <Repos data={repos} isStarred={false} /> </div>
+        <div className="tab-pane fade" id="starred" role="tabpanel" aria-labelledby="nav-starred-tab"> <Repos data={starred} isStarred={true} /> </div>
       </div>
     </div>
   );
