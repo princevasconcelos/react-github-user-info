@@ -1,0 +1,31 @@
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover,
+.nav-tabs > li > a:hover {
+text-decoration: none;
+font-weight: bold;
+border-top-width: 0px;
+border-left-width: 0px;
+border-right-width: 0px;
+border-radius:0px;
+border-bottom-width: 4px;
+border-bottom-style: solid;
+border-bottom-color: #FF6600 !important;
+color: #000 !important;
+background-color: transparent !important;
+}
+.nav-tabs > li > a{
+    border-radius:0px;
+    color:#000;
+    font-size: 18px;
+}
+
+/* li {
+  text-align: center;
+  margin-right: 5px;
+  width: 100px;
+} */
+
+.nav-item {
+  text-align: center;
+  width: 150px;
+}
