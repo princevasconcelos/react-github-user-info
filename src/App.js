@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header/header'
 import Profile from './components/profile/profile'
-import Repository from './components/repository/repository';
 import axios from 'axios'
 import Tabs from './components/tabs/tabs';
 
