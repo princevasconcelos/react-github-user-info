@@ -1,49 +1,37 @@
 import React, { Component } from 'react';
 import Header from './components/header/header'
 import Profile from './components/profile/profile'
-import axios from 'axios'
+import Helper from './utils/helper';
 import Tabs from './components/tabs/tabs';
 
-const BASE_URL = 'https://api.github.com/users'
-const user = 'rodgerpaulo'
- 
 class App extends Component {
 
-  state = {
-    userInfo: [],
-    userRepos: [],
-    userStarred: []
+  userFetched = (data) => {
+    console.log(`oi ${data}`)
   }
 
-  componentWillMount() {
-    axios.all([
-      this.getUserAccount(user),
-      this.getUserRepos(user),
-      this.getUserStarred(user),
-    ])
-    .then(axios.spread((userResponse, reposResponse, starredResponse) => {
+  constructor(props) {
+    super(props)
+    this.state = {
+      username: 'rodgerpaulo'
+    }
+
+
+    
+  }
+
+  componentDidMount() {
+    Helper.getGithubInfor(this.state.username)
+    .then(function(data) {
       this.setState({
-        userInfo: userResponse.data,
-        userRepos: reposResponse.data,
-        userStarred: starredResponse.data,
+        userInfo: data.userInfo,
+        userRepos: data.userRepos,
+        userStarred: data.userStarred,
       })
-    }));
-  }
-
-  getUserAccount(name) {
-    return axios.get(`${BASE_URL}/${name}`);
-  }
-
-  getUserRepos(name) {
-    return axios.get(`${BASE_URL}/${name}/repos`);
-  }
-
-  getUserStarred(name) {
-    return axios.get(`${BASE_URL}/${name}/starred`);
+    }.bind(this))
   }
 
   render() {
-    const {name, bio, avatar_url} = this.state.userInfo
     const repos = this.state.userRepos
     const starred = this.state.userStarred
     return (
@@ -53,11 +41,13 @@ class App extends Component {
           brandIcon='logo-github'
           title='Github'
           subtitle='profiles' />
+
         {/* <Profile 
           name={name}
           bio={bio}
           avatar={avatar_url} /> */}
-        <Tabs repos={repos} starred={starred} />
+          
+        {repos && <Tabs repos={repos} starred={starred} userCallback={this.userFetched} />}
       </div>
     );
   }

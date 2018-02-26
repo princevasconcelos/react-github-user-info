@@ -3,7 +3,12 @@ import Search from '../search/search';
 import Repos from '../repository/repository'
 import './tabs.css'
 
-const Tabs = ({repos, starred}) => {
+const Tabs = ({repos, starred, userCallback}) => {
+
+  const inputCallback = (data) => {
+    userCallback(data)
+  }
+
   const component = (
     <div className='ml-5'>
       <nav>
@@ -25,7 +30,7 @@ const Tabs = ({repos, starred}) => {
         </div>
       </nav>
 
-      <Search />
+      <Search inputValue={inputCallback} />
 
       <div className="tab-content" id="nav-tabContent">
         <div className="tab-pane fade show active" id="repositories" role="tabpanel" aria-labelledby="nav-repo-tab"> <Repos data={repos} isStarred={false} /> </div>
