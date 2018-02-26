@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Header from './components/header/header'
 import Profile from './components/profile/profile'
 import Repository from './components/repository/repository';
-import Main from './components/main/main';
 import axios from 'axios'
+import Tabs from './components/tabs/tabs';
 
 const BASE_URL = 'https://api.github.com/users'
 const user = 'rodgerpaulo'
@@ -26,7 +26,7 @@ class App extends Component {
       this.setState({
         userInfo: userResponse.data,
         userRepos: reposResponse.data,
-        userStarred: starredResponse,
+        userStarred: starredResponse.data,
       })
     }));
   }
@@ -46,18 +46,19 @@ class App extends Component {
   render() {
     const {name, bio, avatar_url} = this.state.userInfo
     const repos = this.state.userRepos
+    const starred = this.state.userStarred
     return (
       <div>
-        {/* <Header 
+        <Header 
           color='#24292e'
           brandIcon='logo-github'
           title='Github'
           subtitle='profiles' />
-        <Profile 
+        {/* <Profile 
           name={name}
           bio={bio}
           avatar={avatar_url} /> */}
-        <Main repos = {repos} />
+        <Tabs repos={repos} starred={starred} />
       </div>
     );
   }
