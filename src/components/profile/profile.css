@@ -1,6 +1,6 @@
 .avatar { 
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
 }
 
 strong {
@@ -15,8 +15,13 @@ figcaption {
   float: right;
   font-size: 15px;
   text-align: start;
-  margin-top: 45px;
+  margin-top: 30px;
   display: flex;
+}
+
+.profile-wrapper {
+  width: 100%;
+  height: 120px;
 }
 
 @media (min-width: 992px) { 
@@ -29,5 +34,10 @@ figcaption {
     float: none;
     text-align: center;
     margin-top: 0px;
+  }
+  
+  .profile-wrapper {
+    height: 0px;
+    background-color: rosybrown;
   }
 }

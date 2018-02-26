@@ -27,7 +27,7 @@ class Search extends React.Component {
   render () {
     return (
       <div>
-        <div className='wrapper-box w-25 my-4'>
+        <div className='wrapper-box w-25 my-4 ml-3'>
           <Ionicon icon='ios-search-outline' fontSize="22px" 
             className='vertical-align mx-2' color='gray' />
           <input type="text" className='custom-font' name="search" 

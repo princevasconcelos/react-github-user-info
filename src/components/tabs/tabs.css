@@ -25,10 +25,26 @@
 
 .nav-item {
   text-align: center;
-  width: 150px;
+  width: 200px;
 }
 
 .badge {
   color: black;
   background-color: gainsboro;
 }
+
+@media (max-width: 576px) {
+  .nav-item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) { 
+  .tabs-wrapper {
+    display: grid;
+  }
+}
+
+
+
+

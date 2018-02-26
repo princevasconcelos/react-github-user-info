@@ -10,7 +10,7 @@ const Tabs = ({repos, starred, userCallback}) => {
   }
 
   const component = (
-    <div className='ml-5'>
+    <div className='tabs-wrapper'>
       <nav>
         <div className="nav nav-tabs mt-4" id="nav-tab" role="tablist">
           <a 

@@ -11,10 +11,13 @@ const propTypes = {
 const Profile = ({name, bio, avatar}) => {
 
   const component = (
-    <figure className='figure'> 
-      <img className='avatar rounded-circle p-4' src={avatar} alt="profile"/>
-      <figcaption align='right'>{name && <strong>{name}</strong>}<br/>{bio}</figcaption>
-    </figure>
+    <div className='profile-wrapper'>
+      <figure className='figure'> 
+        <img className='avatar rounded-circle p-4' src={avatar} alt="profile"/>
+        <figcaption align='right'>{name && <strong>{name}</strong>}<br/>{bio}</figcaption>
+      </figure>
+    </div>
+
 
   );
   return component;

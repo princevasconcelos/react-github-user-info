@@ -31,16 +31,22 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log('componentDidMount')
     this.getData(this.state.username)
   }
 
   componentWillUpdate() {
-    this.getData(this.state.username)
+    console.log('componentWillUpdate')
+    //this.getData(this.state.username)
   }
 
   render() {
+    console.log('render')
+      
+    const info = this.state.userInfo
     const repos = this.state.userRepos
     const starred = this.state.userStarred
+    
     return (
       <div>
         <Header 
@@ -49,12 +55,13 @@ class App extends Component {
           title='Github'
           subtitle='profiles' />
 
-        {/* <Profile 
-          name={name}
-          bio={bio}
-          avatar={avatar_url} /> */}
+        {info && <Profile 
+          name={info.name} bio={info.bio}
+          avatar={info.avatar_url} />}
           
-        {repos && <Tabs repos={repos} starred={starred} userCallback={this.userFetched} />}
+        {repos && <Tabs 
+          repos={repos} starred={starred} 
+          userCallback={this.userFetched} />}
       </div>
     );
   }
