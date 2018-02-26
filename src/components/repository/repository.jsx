@@ -9,13 +9,14 @@ const defaultProps = {
   branchIcon: 'md-git-branch',
   starIcon: 'md-star',
 }
-//owner.login
+
 const propTypes = {
   data: PropTypes.array.isRequired,
   isStarred: PropTypes.bool.isRequired
 }
+
 const Repo = ({data, isStarred}) => {
-  console.log(data)
+  
   const component = data.map((repo, index) => {
     const owner = `${repo.owner.login} / `
     repo.stargazers_count = `${repo.stargazers_count}`
