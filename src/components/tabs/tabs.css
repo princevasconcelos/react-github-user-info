@@ -27,3 +27,8 @@
   text-align: center;
   width: 150px;
 }
+
+.badge {
+  color: black;
+  background-color: gainsboro;
+}

@@ -10,8 +10,20 @@ const Tabs = ({repos, starred}) => {
     <div className='ml-5'>
       <nav>
         <div className="nav nav-tabs mt-4" id="nav-tab" role="tablist">
-          <a className="nav-item nav-link text-muted active" id="nav-repo-tab" data-toggle="tab" href="#repositories" role="tab" aria-controls="repositories" aria-selected="true">Repos</a>
-          <a className="nav-item nav-link text-muted" id="nav-starred-tab" data-toggle="tab" href="#starred" role="tab" aria-controls="starred" aria-selected="false">Starred</a>
+          <a 
+            className="nav-item nav-link text-muted active" 
+            id="nav-repo-tab" data-toggle="tab" 
+            href="#repositories" role="tab" 
+            aria-controls="repositories" aria-selected="true">
+              Repos <span className="badge badge-pill">{repos.length || 0}</span>
+          </a>
+          <a 
+            className="nav-item nav-link text-muted" 
+            id="nav-starred-tab" data-toggle="tab" 
+            href="#starred" role="tab" 
+            aria-controls="starred" aria-selected="false">
+              Starred <span className="badge badge-pill ">{repos.length || 0}</span>
+          </a>
         </div>
       </nav>
 
