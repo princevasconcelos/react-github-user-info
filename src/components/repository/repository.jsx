@@ -12,9 +12,9 @@ const defaultProps = {
 const propTypes = {
   repos: PropTypes.array.isRequired,
 }
-const Repo = ({repos}) => {
+const Repo = ({data}) => {
   
-  const component = repos.map((repo, index) => {
+  const component = data.map((repo, index) => {
     repo.stargazers_count = `${repo.stargazers_count}`
     return (
       <li className='list-group-item' key={index}>
