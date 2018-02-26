@@ -13,36 +13,29 @@ class App extends Component {
     }
   }
 
-  getData(username) {
-    Helper.getGithubInfor(this.state.username)
+  fetchData(username) {
+    Helper.getGithubInfor(username)
     .then(function(data) {
+      console.log('then')
       this.setState({
+        username: username,
         userInfo: data.userInfo,
         userRepos: data.userRepos,
         userStarred: data.userStarred,
       })
     }.bind(this))
+    .catch(console.log('Usuário não encontrado'))
   }
 
   userFetched = (data) => {
-    this.setState({
-      username: data
-    })
+    this.fetchData(data)
   }
 
   componentDidMount() {
-    console.log('componentDidMount')
-    this.getData(this.state.username)
-  }
-
-  componentWillUpdate() {
-    console.log('componentWillUpdate')
-    //this.getData(this.state.username)
+    this.fetchData(this.state.username)
   }
 
   render() {
-    console.log('render')
-      
     const info = this.state.userInfo
     const repos = this.state.userRepos
     const starred = this.state.userStarred
