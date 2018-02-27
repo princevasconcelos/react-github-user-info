@@ -14,7 +14,12 @@ const Profile = ({name, bio, avatar}) => {
     <div className='profile-wrapper'>
       <figure className='figure'> 
         <img className='avatar rounded-circle p-4' src={avatar} alt="profile"/>
-        <figcaption align='right'>{name && <strong>{name}</strong>}<br/>{bio}</figcaption>
+        <figcaption align='right'>
+          {name && <strong>{name}</strong>}
+            <br/>
+            {bio &&
+              <textarea readOnly='readonly' value={bio} className='responsive-textarea no-border no-select'></textarea>}
+          </figcaption>
       </figure>
     </div>
 
