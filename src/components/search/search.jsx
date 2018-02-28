@@ -6,9 +6,6 @@ class Search extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = {
-      username: 'rodgerpaulo'
-    }
     this.searchHandler = this.searchHandler.bind(this);
   }
 
@@ -16,9 +13,6 @@ class Search extends React.Component {
     if(event.key === 'Enter'){
       const value = event.target.value.trim();
       if (value !== '') {
-        this.setState({
-          username: value
-        })
         this.props.inputValue(value)
       }
     }
@@ -26,13 +20,12 @@ class Search extends React.Component {
 
   render () {
     return (
-      <div>
-        <div className='wrapper-box w-25 my-4 ml-3'>
-          <Ionicon icon='ios-search-outline' fontSize="22px" 
-            className='vertical-align mx-2' color='gray' />
-          <input type="text" className='custom-font' name="search" 
-            placeholder="Filter by name" onKeyPress={this.searchHandler} /> 
-        </div>
+      <div className='wrapper-box w-25 my-4 ml-3'>
+        <Ionicon icon='ios-search-outline' fontSize="22px" 
+          className='vertical-align mx-2' color='gray' />
+        <input type="text" className='custom-font' name="search" 
+          placeholder="Search username" onKeyPress={this.searchHandler}
+             /> 
       </div>
     );
   }

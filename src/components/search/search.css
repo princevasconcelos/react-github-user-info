@@ -20,8 +20,9 @@ input {
   min-width: 260px;
 }
 
-/* .glowing-border:focus { 
+.wrapper-box:focus-within {
   outline: none;
   border-color: #9ecaed;
   box-shadow: 0 0 10px #9ecaed;
-} */
+  min-width: 270px;
+}

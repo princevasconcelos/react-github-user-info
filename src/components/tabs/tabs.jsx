@@ -25,7 +25,7 @@ const Tabs = ({repos, starred, userCallback}) => {
             id="nav-starred-tab" data-toggle="tab" 
             href="#starred" role="tab" 
             aria-controls="starred" aria-selected="false">
-              Starred <span className="badge badge-pill ">{repos.length || 0}</span>
+              Starred <span className="badge badge-pill ">{starred.length || 0}</span>
           </a>
         </div>
       </nav>

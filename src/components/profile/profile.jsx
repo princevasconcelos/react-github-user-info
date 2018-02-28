@@ -22,8 +22,6 @@ const Profile = ({name, bio, avatar}) => {
           </figcaption>
       </figure>
     </div>
-
-
   );
   return component;
 }
