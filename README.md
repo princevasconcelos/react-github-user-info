@@ -1,4 +1,4 @@
-# Github Porfiles
+# Github Profiles
 
 ## Overview
 ![gif1](https://media.giphy.com/media/dIVdHdRDxFWkBT7Ygi/giphy.gif)
@@ -25,4 +25,3 @@ $ npm start
 - `Ionicons`
 - `Open Sans font`
 - `Github API`
-- `React 16`
