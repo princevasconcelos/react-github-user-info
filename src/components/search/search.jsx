@@ -15,6 +15,7 @@ class Search extends React.Component {
       if (value !== '') {
         this.props.inputValue(value)
       }
+      this.input.value = ''
     }
   }
 
@@ -24,8 +25,8 @@ class Search extends React.Component {
         <Ionicon icon='ios-search-outline' fontSize="22px" 
           className='vertical-align mx-2' color='gray' />
         <input type="text" className='custom-font' name="search" 
-          placeholder="Search username" onKeyPress={this.searchHandler}
-             /> 
+          placeholder="Search username" ref={(input) => this.input = input}
+          onKeyPress={this.searchHandler} /> 
       </div>
     );
   }
